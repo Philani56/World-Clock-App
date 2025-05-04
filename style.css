@@ -1,0 +1,136 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #101111 0%, #b30a0a 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+  
+  .app-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  h1 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* Clock Controls */
+  .clock-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  #timezone-select {
+    flex-grow: 1;
+    padding: 0.8rem;
+    border: 2px solid #b2ebf2;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: white;
+    min-width: 200px;
+  }
+  
+  #add-clock {
+    padding: 0.8rem 1.5rem;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #add-clock:hover {
+    background-color: #8f0000;
+  }
+  
+  /* Clock Container */
+  .clock-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .clock {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s;
+  }
+  
+  .clock:hover {
+    transform: translateY(-5px);
+  }
+  
+  .clock h3 {
+    color: #000000;
+    margin-top: 0;
+    font-size: 1.3rem;
+  }
+  
+  .time {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #8f0007;
+    margin: 0.5rem 0;
+    font-family: 'Courier New', monospace;
+  }
+  
+  .date {
+    color: #757575;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .remove-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff5252;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .clock:hover .remove-btn {
+    opacity: 1;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .app-container {
+      padding: 1rem;
+    }
+    
+    .clock-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .clock-controls {
+      flex-direction: column;
+    }
+    
+    #add-clock {
+      width: 100%;
+    }
+  }
